@@ -16,14 +16,8 @@ const userSchema = new Schema({
   // 密码
   password: { type: String, required: true },
 
-  // 手机号
-  phone: { type: String },
-
-  // 邮箱
-  email: { type: String },
-
   // 创建日期
-  create_time: { type: Number }
+  create_time: { type: Number, default: Date.now }
 })
 
 // 定义Model
