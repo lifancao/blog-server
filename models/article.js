@@ -22,7 +22,7 @@ const articleSchema = new Schema({
   img_url: { type: String },
 
   // 文章分类
-  category: [{ type: Schema.Types.ObjectId, ref: 'Category', required: true }],
+  category: [{ type: Schema.Types.ObjectId, ref: 'Category' }],
 
   // 创建日期
   create_time: { type: Date, default: Date.now },

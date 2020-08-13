@@ -3,6 +3,7 @@
  */
 
 const express = require('express')
+const md5 = require('blueimp-md5')
 
 const Article = require('../models/Article')
 const Category = require('../models/Category')
@@ -35,7 +36,6 @@ router.get('/manage/category/list', (req, res) => {
       res.send({ status: 0, data: categorys })
     })
     .catch(error => {
-      console.error('获取分类列表异常!', error)
       res.send({ status: 1, msg: '获取分类列表异常, 请重新尝试!' })
     })
 })

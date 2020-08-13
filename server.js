@@ -16,7 +16,7 @@ const app = express()
 const cookieParser = require('cookie-parser') 
 
 // 声明使用路由器中间件
-// const indexRouter = require('./routes') 
+const indexRouter = require('./routes') 
 
 // 声明使用静态中间件
 app.use(express.static('public'))
@@ -26,7 +26,7 @@ app.use(express.urlencoded({extended: true}))
 
 app.use(cookieParser())
 
-// app.use('/', indexRouter)
+app.use('/', indexRouter)
 
 mongoose.connect('mongodb://localhost/blog_db')
   .then(() => {

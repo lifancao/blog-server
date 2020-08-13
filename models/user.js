@@ -14,10 +14,7 @@ const userSchema = new Schema({
   username: { type: String, required: true },
 
   // 密码
-  password: { type: String, required: true },
-
-  // 创建日期
-  create_time: { type: Number, default: Date.now }
+  password: { type: String, required: true }
 })
 
 // 定义Model
@@ -27,9 +24,6 @@ const User = mongoose.model('User', userSchema)
 User.findOne({ username: 'admin' }).then(user => {
   if (!user) {
     User.create({ username: 'admin', password: md5('admin') })
-      .then(user => {
-        console.log('初始化用户: 用户名: admin 密码为: admin')
-      })
   }
 })
 
