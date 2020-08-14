@@ -17,9 +17,6 @@ const userSchema = new Schema({
   password: { type: String, required: true }
 })
 
-// 定义Model
-const User = mongoose.model('User', userSchema)
-
 // 初始化默认管理员用户: admin/admin
 User.findOne({ username: 'admin' }).then(user => {
   if (!user) {
