@@ -13,8 +13,5 @@ const categorySchema = new Schema({
   category: { type: String, required: true }
 })
 
-// 定义Model
-const Category = mongoose.model('Category', categorySchema)
-
-// 向外暴露categoryModel
-module.exports = Category
+// 向外暴露Model
+module.exports = mongoose.model('Category', categorySchema)

@@ -31,8 +31,5 @@ const articleSchema = new Schema({
   update_time: { type: Date, default: Date.now }
 })
 
-// 定义Model
-const Article = mongoose.model('Article', articleSchema)
-
-// 向外暴露articleModel
-module.exports = Article
+// 向外暴露Model
+module.exports = mongoose.model('Article', articleSchema)

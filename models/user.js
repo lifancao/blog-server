@@ -18,11 +18,11 @@ const userSchema = new Schema({
 })
 
 // 初始化默认管理员用户: admin/admin
-User.findOne({ username: 'admin' }).then(user => {
-  if (!user) {
-    User.create({ username: 'admin', password: md5('admin') })
-  }
-})
+// User.findOne({ username: 'admin' }).then(user => {
+//   if (!user) {
+//     User.create({ username: 'admin', password: md5('admin') })
+//   }
+// })
 
-// 向外暴露userModel
-module.exports = User
+// 向外暴露Model
+module.exports = mongoose.model('User', userSchema)
